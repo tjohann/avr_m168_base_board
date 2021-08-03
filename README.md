@@ -47,7 +47,7 @@ Requirement
 
 To use my scripts, you need to source the pi-env_env file, wich sets some shell values:
 
-	. ./m168bb_env
+	. ./avr_env
 
 
 

@@ -3,7 +3,7 @@
 #
 
 ifeq "${M168_BB_HOME}" ""
-    $(error error: please source m168bb_env first!)
+    $(error error: please source avr_env first!)
 endif
 
 MODULES = pics Documentation schematics pcb
