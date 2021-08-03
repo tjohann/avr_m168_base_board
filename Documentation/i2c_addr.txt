@@ -1,0 +1,8 @@
+Used I2C addresses
+==================
+
+RTC -> 0x68
+LCD -> 0x22
+BMP180 -> 0x77
+
+

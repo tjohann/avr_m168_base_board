@@ -22,11 +22,9 @@
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
-*.dll
+# Shared objects
 *.so
 *.so.*
-*.dylib
 
 # Executables
 *.exe
@@ -36,17 +34,14 @@
 *.x86_64
 *.hex
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# uC objects
+*.bin
+*.srec
+*.i
+*.lst
+*.s
+*.map
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# others
+*~
+
