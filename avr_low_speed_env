@@ -1,0 +1,31 @@
+# +------------------------- setup the my personal env ------------------------+
+# |                                 avr_env                                    |
+# +----------------------------------------------------------------------------+
+
+# set avr home
+export M168_BB_HOME=${HOME}/Projects/avr_m168_base_board
+
+# extend PATH
+export PATH=${M168_BB_HOME}/bin::$PATH
+
+# controler config
+export MCU=atmega168p
+export F_CPU=1000000
+export BAUD=9600
+
+#
+# FUSE config
+#
+export LFUSE=0x62
+export HFUSE=0xdf
+export EFUSE=0x01
+
+#
+# Atmel-ICE
+#
+export PROGRAMMER=avrdude
+export PROGRAMMER_HW=atmelice_isp
+export PROGRAMMER_ARGS=" -P usb"
+
+# print only controller config config
+echo "Setup env for target ${MCU} with ${F_CPU}Hz and ${BAUD}baud"

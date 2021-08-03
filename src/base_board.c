@@ -19,21 +19,20 @@
 
 #include "base_board.h"
 
-
-void
-__attribute__((noinline)) init_base_board(void)
+void __attribute__((noinline)) init_base_board(void)
 {
-	// do something
+	LED_DDR  |= (1 << LED);
+	LED_PORT |= (1 << LED);
+
+	_delay_ms(1000);
 }
 
-
-int
-__attribute__((OS_main)) main(void)
+int __attribute__((OS_main)) main(void)
 {
-
 	init_base_board();
 
 	while (1) {
-		_delay_ms(10);
+		LED_PORT ^= (1 << LED);
+		_delay_ms(1000);
 	}
 }

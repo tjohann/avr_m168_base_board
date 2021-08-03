@@ -23,8 +23,8 @@
 #include <util/delay.h>
 #include <string.h>
 
-/* the control LED */
-#define LED_PIN PB0
+/* the info LED */
+#define LED PB0
 #define LED_DDR DDRB
 #define LED_PORT PORTB
 
