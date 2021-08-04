@@ -14,11 +14,16 @@ export F_CPU=1000000
 export BAUD=9600
 
 #
-# FUSE config
+# FUSE config (defaults)
 #
 export LFUSE=0x62
-export HFUSE=0xdf
-export EFUSE=0x01
+#export HFUSE=0xdf
+export EFUSE=0x00
+#
+# FUSE config changes
+# - preserve EEPROM across flashes
+#
+export HFUSE=0xd7
 
 #
 # Atmel-ICE

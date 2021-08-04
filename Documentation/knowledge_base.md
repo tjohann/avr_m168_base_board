@@ -8,6 +8,26 @@ AVR controller
 t.b.d.
 
 
+FUSES
+-----
+
+Calculator: http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega168pa
+
+Defaults for m168pa (internal@1MHz)
+
+	LFUSE=0x62
+	HFUSE=0xdf
+	EFUSE=0x00
+
+My changes:
+
+	HFUSE=0xd7  (preserve EEPROM across flashes)
+
+For high-speed (internal@8MHz):
+
+	LFUSE=0xE2
+
+
 Display
 -------
 
