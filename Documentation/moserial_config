@@ -3,6 +3,7 @@ outgoing_tab=0
 input_mode_hex=false
 input_line_end=0
 show_extra_controls=true
+incoming_tab=0
 
 [preferences]
 use_system_monospace_font=false
@@ -24,12 +25,12 @@ baud_rate=9600
 data_bits=8
 stop_bits=1
 parity=0
-handshake=0
+handshake=2
 access_mode=0
 local_echo=false
 auto_connect=false
 
 [window]
-width=1091
-height=573
-paned_pos=153
+width=1304
+height=897
+paned_pos=502

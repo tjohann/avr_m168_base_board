@@ -4,11 +4,14 @@
 
 include validate_makefile.mk
 
+
 DEBUG = -g -ggdb
 
 TARGET = base_board
-SRC = base_board.c
-HEADER = base_board.h
+LINK_TARGET = $(TARGET).o usart.o
+
+SRC = base_board.c usart.c
+HEADER = base_board.h usart.h
 
 CFLAGS = -ffunction-sections -fdata-sections -Os
 LDFLAGS = -Wl,--relax,--gc-sections -Wl,-Map,$(TARGET).map
@@ -67,8 +70,8 @@ read_fuses::
 	@echo "|| "
 	@echo "|| -->  Building $(TARGET).elf "
 	@echo "|| "
-	avr-gcc -Wall -Wextra $(DEBUG) -mmcu=$(MCU) -DF_CPU=$(F_CPU)UL $(CFLAGS) -save-temps -c $(SRC)
-	avr-gcc -Wall -Wextra $(DEBUG) -mmcu=$(MCU) -DF_CPU=$(F_CPU)UL $(LDFLAGS) $(TARGET).o --output $@
+	avr-gcc -Wall -Wextra $(DEBUG) -mmcu=$(MCU) -DF_CPU=$(F_CPU)UL -DBAUD=${BAUD} $(CFLAGS) -save-temps -c $(SRC)
+	avr-gcc -Wall -Wextra $(DEBUG) -mmcu=$(MCU) -DF_CPU=$(F_CPU)UL -DBAUD=${BAUD} $(LDFLAGS) $(LINK_TARGET) --output $@
 
 %.hex: %.elf
 	@echo " "

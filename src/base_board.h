@@ -21,7 +21,10 @@
 
 #define __DELAY_BACKWARD_COMPATIBLE__
 #include <util/delay.h>
-#include <string.h>
+
+#ifndef F_CPU
+#  error "Freq of CPU not defined!"
+#endif
 
 /* the info LED */
 #define LED PB0

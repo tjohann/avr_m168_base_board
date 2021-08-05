@@ -17,27 +17,35 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
 */
 
-#include "base_board.h"
 #include "usart.h"
 
-void __attribute__((noinline)) init_base_board(void)
+void init_usart(void)
 {
-	init_usart();
+	UBRR0H = UBRRH_VALUE;
+	UBRR0L = UBRRL_VALUE;
 
-	LED_PORT |= (1 << LED);
-	_delay_ms(1000);
+#if USE_2X
+	UCSR0A |= (1 << U2X0);
+#else
+	UCSR0A &= ~(1 << U2X0);
+#endif
+	UCSR0B = (1 << TXEN0)  | (1 << RXEN0);
+	UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);  /* 8N1 */
 }
 
-int __attribute__((OS_main)) main(void)
+void send_byte(uint8_t data)
 {
-	init_base_board();
+	/* block until UDRE0 (Data Register Empty) is set */
+	while (!(UCSR0A & (1 << UDRE0)))
+		;
 
-	send_string("Hello World!");
-	//send_byte(1);
+	UDR0 = data;
+}
 
-	while (1) {
-		LED_PORT ^= (1 << LED);
+void send_string(const char str[])
+{
+	uint8_t i = 0;
 
-		_delay_ms(1000);
-	}
+	while(str[i])
+		send_byte(str[i++]);
 }
