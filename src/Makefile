@@ -37,7 +37,7 @@ program_all: program_flash program_eeprom
 program_flash: $(TARGET).hex
 	$(PROGRAMMER) -c $(PROGRAMMER_HW) -p $(MCU) $(PROGRAMMER_ARGS) -U flash:w:$<
 
-program_eeprom: $(TARGET).eeprom
+program_eeprom: $(TARGET)_eeprom.hex
 	$(PROGRAMMER) -c $(PROGRAMMER_HW) -p $(MCU) $(PROGRAMMER_ARGS) -U eeprom:w:$<
 
 

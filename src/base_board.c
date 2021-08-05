@@ -21,7 +21,6 @@
 
 void __attribute__((noinline)) init_base_board(void)
 {
-	LED_DDR  |= (1 << LED);
 	LED_PORT |= (1 << LED);
 
 	_delay_ms(1000);
@@ -33,6 +32,7 @@ int __attribute__((OS_main)) main(void)
 
 	while (1) {
 		LED_PORT ^= (1 << LED);
+
 		_delay_ms(1000);
 	}
 }

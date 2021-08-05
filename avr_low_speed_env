@@ -18,7 +18,8 @@ export BAUD=9600
 #
 export LFUSE=0x62
 #export HFUSE=0xdf
-export EFUSE=0x00
+export EFUSE=0xf9
+# or EFUSE=0x01
 #
 # FUSE config changes
 # - preserve EEPROM across flashes
