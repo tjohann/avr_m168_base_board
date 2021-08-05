@@ -11,8 +11,7 @@ t.b.d.
 FUSES
 -----
 
-Calculator: http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega168pa
- or https://www.engbedded.com/fusecalc/
+Calculator: http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega168pa or https://www.engbedded.com/fusecalc/
 
 Defaults for m168pa (internal@1MHz)
 
@@ -38,7 +37,7 @@ For high-speed (internal@8MHz):
 M168*
 -----
 
-Readout default values (of my example controllers) via AVRDUDE:
+Readout of default values (of my example controllers) via AVRDUDE:
 
 	avrdude: Device signature = 0x1e940b (probably m168p)
 	avrdude: safemode: hfuse reads as DF
@@ -54,7 +53,6 @@ Display
 
 https://cdn-shop.adafruit.com/datasheets/HD44780.pdf
 https://de.wikipedia.org/wiki/HD44780
-
 
 
 I2C topics and linux
@@ -77,6 +75,11 @@ I add the module like https://www.elecrow.com/wiki/index.php?title=Tiny_RTC to t
 
 Serial console
 --------------
+
+Base config:
+
+	Baudrate: 9600
+	Config: 8N1
 
 Moserial -> https://wiki.gnome.org/action/show/Apps/Moserial?action=show&redirect=moserial
 

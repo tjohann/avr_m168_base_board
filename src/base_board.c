@@ -20,24 +20,42 @@
 #include "base_board.h"
 #include "usart.h"
 
-void __attribute__((noinline)) init_base_board(void)
+void __attribute__((noinline)) init_hw(void)
 {
 	init_usart();
 
+	LED_DDR |= (1 << LED);
+}
+
+void init_base_board(void)
+{
 	LED_PORT |= (1 << LED);
+
+	send_string("Press 1 for LED on");
+	send_string("Press 0 for LED off");
+	send_string("All other keys toggle the LED");
+
 	_delay_ms(1000);
 }
 
 int __attribute__((OS_main)) main(void)
 {
+	init_hw();
 	init_base_board();
 
-	send_string("Hello World!");
-	//send_byte(1);
-
+	uint8_t ret = 0;
 	while (1) {
-		LED_PORT ^= (1 << LED);
+		ret = recv_byte();
 
-		_delay_ms(1000);
+		if (ret == '1') {
+			LED_PORT |= (1 << LED);
+			send_string("LED on");
+		} else if (ret == '0') {
+			LED_PORT &= ~(1 << LED);
+			send_string("LED off");
+		} else {
+			LED_PORT ^= (1 << LED);
+			send_string("toggle LED");
+		}
 	}
 }

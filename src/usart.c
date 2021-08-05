@@ -42,10 +42,35 @@ void send_byte(uint8_t data)
 	UDR0 = data;
 }
 
+uint8_t recv_byte(void)
+{
+	/* block until RXC0 (Receive Complete) is set */
+	while (!(UCSR0A & (1 << RXC0)))
+		;
+
+	return UDR0;
+}
+
 void send_string(const char str[])
 {
 	uint8_t i = 0;
 
 	while(str[i])
 		send_byte(str[i++]);
+}
+
+void recv_string(char str[], uint8_t len)
+{
+	uint8_t i = 0;
+	char ret = 0;
+
+	memset(0, str, len);
+	while (i < len) {
+		ret = recv_byte();
+		if (ret == '\r')
+			break;
+
+		str[i] = ret;
+		i++;
+	}
 }

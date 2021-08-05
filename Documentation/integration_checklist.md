@@ -11,21 +11,17 @@ Below you find the common checks and the special tasks for AVR-M168-BB_Vx.x.x.
 Common checks
 -------------
 
-installation checks:
+build/config checks:
 
 	- ...
 
-build/config updates on device:
-
-	- ...
-
-tool checks on device:
+flash checks:
 
 	- ...
 
 sdk checks:
 
-	- update checksum.sha256
+	- ...
 
 
 
