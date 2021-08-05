@@ -28,3 +28,8 @@ handshake=0
 access_mode=0
 local_echo=false
 auto_connect=false
+
+[window]
+width=1091
+height=573
+paned_pos=153
