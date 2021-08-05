@@ -43,5 +43,6 @@
 *.map
 
 # others
+*.bak
 *~
 
