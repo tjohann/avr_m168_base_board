@@ -8,6 +8,13 @@ ATMega168
 t.b.d.
 
 
+Pololu ATMega328 board
+----------------------
+
+https://www.pololu.com/category/239/a-star-328pb-micro
+https://www.pololu.com/docs/0J74/all
+
+
 Display
 -------
 

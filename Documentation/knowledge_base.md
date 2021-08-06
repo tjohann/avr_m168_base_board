@@ -8,8 +8,18 @@ AVR controller
 t.b.d.
 
 
-FUSES
------
+
+ATMega328 board from Pololu
+---------------------------
+
+Alternative more powerfull board based on a m328 with max F_CPU of 20MHz
+
+https://www.pololu.com/category/239/a-star-328pb-micro
+https://www.pololu.com/docs/0J74/all
+
+
+FUSES (m168pa)
+--------------
 
 Calculator: http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega168pa or https://www.engbedded.com/fusecalc/
 
