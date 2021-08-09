@@ -70,8 +70,8 @@ read_fuses::
 	@echo "|| "
 	@echo "|| -->  Building $(TARGET).elf "
 	@echo "|| "
-	avr-gcc -Wall -Wextra $(DEBUG) -mmcu=$(MCU) -DF_CPU=$(F_CPU)UL -DBAUD=${BAUD} $(CFLAGS) -save-temps -c $(SRC)
-	avr-gcc -Wall -Wextra $(DEBUG) -mmcu=$(MCU) -DF_CPU=$(F_CPU)UL -DBAUD=${BAUD} $(LDFLAGS) $(LINK_TARGET) --output $@
+	avr-gcc -Wall -Wextra $(DEBUG) -mmcu=$(MCU) -DF_CPU=$(F_CPU)UL -DBAUD=${BAUD}UL $(CFLAGS) -save-temps -c $(SRC)
+	avr-gcc -Wall -Wextra $(DEBUG) -mmcu=$(MCU) -DF_CPU=$(F_CPU)UL -DBAUD=${BAUD}UL $(LDFLAGS) $(LINK_TARGET) --output $@
 
 %.hex: %.elf
 	@echo " "
