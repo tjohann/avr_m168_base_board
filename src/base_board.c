@@ -1,6 +1,6 @@
 /*
   GPL
-  (c) 2021, thorsten.johannvorderbrueggen@t-online.de
+  (c) 2021 - 2022, thorsten.johannvorderbrueggen@t-online.de
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -31,9 +31,9 @@ void init_base_board(void)
 {
 	LED_PORT |= (1 << LED);
 
-	send_string("Press 1 for LED on");
-	send_string("Press 0 for LED off");
-	send_string("All other keys toggle the LED");
+	send_string("Send ASCII 1 for LED on\n");
+	send_string("Send ASCII 0 for LED off\n");
+	send_string("All other codes toggle the LED\n");
 
 	_delay_ms(1000);
 }
@@ -49,13 +49,13 @@ int __attribute__((OS_main)) main(void)
 
 		if (ret == '1') {
 			LED_PORT |= (1 << LED);
-			send_string("LED on");
+			send_string("LED on\n");
 		} else if (ret == '0') {
 			LED_PORT &= ~(1 << LED);
-			send_string("LED off");
+			send_string("LED off\n");
 		} else {
 			LED_PORT ^= (1 << LED);
-			send_string("toggle LED");
+			send_string("toggle LED\n");
 		}
 	}
 }

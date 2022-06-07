@@ -1,6 +1,6 @@
 /*
   GPL
-  (c) 2021, thorsten.johannvorderbrueggen@t-online.de
+  (c) 2021 - 2022, thorsten.johannvorderbrueggen@t-online.de
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by

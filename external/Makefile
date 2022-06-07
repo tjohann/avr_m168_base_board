@@ -11,6 +11,7 @@ clean::
 
 distclean: clean
 
+# as an example:
 #get_libbaalue::
 #	(git clone https://github.com/tjohann/libbaalue.git)
 

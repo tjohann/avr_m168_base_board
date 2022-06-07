@@ -10,7 +10,7 @@ export PATH=${M168_BB_HOME}/bin::$PATH
 
 # controler config
 export MCU=atmega168p
-export F_CPU=8000000
+export F_CPU=16000000
 export BAUD=9600
 
 #
