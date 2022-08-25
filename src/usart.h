@@ -19,6 +19,7 @@
 
 #include <avr/io.h>
 #include <util/setbaud.h>
+#include <string.h>
 
 #ifndef BAUD
 #  error "BAUD rate not defined!"
